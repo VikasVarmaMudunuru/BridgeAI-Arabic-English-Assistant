@@ -21,6 +21,7 @@
       --positive: #00c896;
       --negative: #ff4f6a;
       --neutral: #7b8fb0;
+      --cultural: #f0a500;
       --radius: 18px;
     }
 
@@ -36,7 +37,6 @@
       overflow: hidden;
     }
 
-    /* Animated background grid */
     body::before {
       content: '';
       position: fixed;
@@ -50,7 +50,6 @@
       z-index: 0;
     }
 
-    /* Header */
     .header {
       position: relative;
       z-index: 10;
@@ -63,49 +62,29 @@
       backdrop-filter: blur(10px);
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .logo { display: flex; align-items: center; gap: 10px; }
 
     .logo-icon {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       font-size: 18px;
     }
 
     .logo-text {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 18px; font-weight: 600;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .logo-sub {
-      font-size: 11px;
-      color: var(--text2);
-      margin-top: -2px;
-    }
+    .logo-sub { font-size: 11px; color: var(--text2); margin-top: -2px; }
 
-    .status-dot {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text2);
-    }
+    .status-dot { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text2); }
 
     .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
       background: var(--positive);
       animation: pulse 2s infinite;
     }
@@ -115,90 +94,53 @@
       50% { opacity: 0.6; transform: scale(0.85); }
     }
 
-    /* Chat area */
     .chat-area {
-      flex: 1;
-      overflow-y: auto;
+      flex: 1; overflow-y: auto;
       padding: 20px 16px;
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       scroll-behavior: smooth;
     }
 
     .chat-area::-webkit-scrollbar { width: 4px; }
-    .chat-area::-webkit-scrollbar-track { background: transparent; }
     .chat-area::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-    /* Welcome message */
     .welcome {
-      text-align: center;
-      padding: 40px 20px;
+      text-align: center; padding: 40px 20px;
       animation: fadeIn 0.6s ease;
     }
 
-    .welcome-icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-      display: block;
-    }
+    .welcome-icon { font-size: 48px; margin-bottom: 16px; display: block; }
 
     .welcome h2 {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-size: 22px; font-weight: 500; margin-bottom: 8px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .welcome p {
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.6;
-      max-width: 320px;
-      margin: 0 auto 24px;
-    }
+    .welcome p { font-size: 14px; color: var(--text2); line-height: 1.6; max-width: 320px; margin: 0 auto 24px; }
 
-    .example-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
+    .example-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
     .chip {
       padding: 8px 14px;
       background: var(--surface2);
       border: 1px solid var(--border);
       border-radius: 20px;
-      font-size: 13px;
-      color: var(--text2);
-      cursor: pointer;
-      transition: all 0.2s;
+      font-size: 13px; color: var(--text2);
+      cursor: pointer; transition: all 0.2s;
     }
 
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
-    /* Message bubbles */
-    .message {
-      margin-bottom: 16px;
-      animation: slideUp 0.3s ease;
-      max-width: 85%;
-    }
+    .message { margin-bottom: 16px; animation: slideUp 0.3s ease; max-width: 85%; }
 
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     .message.user { margin-left: auto; }
     .message.bot { margin-right: auto; }
@@ -206,9 +148,7 @@
     .bubble {
       padding: 12px 16px;
       border-radius: var(--radius);
-      font-size: 15px;
-      line-height: 1.6;
-      position: relative;
+      font-size: 15px; line-height: 1.6;
     }
 
     .message.user .bubble {
@@ -217,28 +157,19 @@
       border-bottom-right-radius: 4px;
     }
 
-    .message.bot .bubble {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-bottom-left-radius: 4px;
-    }
-
-    /* Arabic text styling */
     .arabic-text {
       font-family: 'IBM Plex Sans Arabic', sans-serif;
-      direction: rtl;
-      text-align: right;
-      font-size: 16px;
-      line-height: 1.8;
+      direction: rtl; text-align: right;
+      font-size: 16px; line-height: 1.8;
     }
 
-    /* Translation result card */
+    /* Result card */
     .result-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       overflow: hidden;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       animation: slideUp 0.3s ease;
       max-width: 90%;
     }
@@ -247,98 +178,89 @@
       padding: 10px 14px;
       background: var(--surface2);
       border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-      color: var(--text2);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 12px; color: var(--text2);
     }
 
-    .direction-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 500;
-      color: var(--accent);
-    }
+    .direction-badge { display: flex; align-items: center; gap: 6px; font-weight: 500; color: var(--accent); }
 
     .result-body { padding: 14px; }
 
     .result-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text2);
-      margin-bottom: 4px;
+      font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--text2); margin-bottom: 4px;
     }
 
-    .result-text {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
+    .result-text { font-size: 16px; line-height: 1.6; margin-bottom: 12px; color: var(--text); }
 
-    .result-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 12px 0;
-    }
+    .result-divider { height: 1px; background: var(--border); margin: 12px 0; }
 
-    /* Sentiment badge */
-    .sentiment-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
+    .sentiment-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
 
     .sentiment-badge {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
+      display: flex; align-items: center; gap: 5px;
+      padding: 5px 10px; border-radius: 20px;
+      font-size: 12px; font-weight: 500;
     }
 
-    .sentiment-badge.POSITIVE {
-      background: rgba(0, 200, 150, 0.12);
-      color: var(--positive);
-      border: 1px solid rgba(0, 200, 150, 0.25);
+    .sentiment-badge.POSITIVE { background: rgba(0,200,150,0.12); color: var(--positive); border: 1px solid rgba(0,200,150,0.25); }
+    .sentiment-badge.NEGATIVE { background: rgba(255,79,106,0.12); color: var(--negative); border: 1px solid rgba(255,79,106,0.25); }
+    .sentiment-badge.NEUTRAL { background: rgba(123,143,176,0.12); color: var(--neutral); border: 1px solid rgba(123,143,176,0.25); }
+
+    /* Cultural tip card */
+    .cultural-card {
+      background: rgba(240, 165, 0, 0.06);
+      border: 1px solid rgba(240, 165, 0, 0.25);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      animation: slideUp 0.4s ease;
+      max-width: 90%;
     }
 
-    .sentiment-badge.NEGATIVE {
-      background: rgba(255, 79, 106, 0.12);
-      color: var(--negative);
-      border: 1px solid rgba(255, 79, 106, 0.25);
+    .cultural-header {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 10px;
     }
 
-    .sentiment-badge.NEUTRAL {
-      background: rgba(123, 143, 176, 0.12);
-      color: var(--neutral);
-      border: 1px solid rgba(123, 143, 176, 0.25);
+    .cultural-badge {
+      font-size: 11px; font-weight: 500;
+      padding: 3px 10px; border-radius: 20px;
+      background: rgba(240,165,0,0.15);
+      color: var(--cultural);
+      border: 1px solid rgba(240,165,0,0.3);
     }
 
-    /* Loading animation */
+    .cultural-phrase {
+      font-size: 18px; font-weight: 600;
+      color: var(--cultural);
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      direction: rtl; margin-bottom: 4px;
+    }
+
+    .cultural-literal {
+      font-size: 13px; color: var(--text2);
+      margin-bottom: 8px; font-style: italic;
+    }
+
+    .cultural-explanation {
+      font-size: 13px; color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* Typing animation */
     .typing {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      display: flex; align-items: center; gap: 5px;
       padding: 14px 16px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       border-bottom-left-radius: 4px;
-      width: fit-content;
-      margin-bottom: 16px;
+      width: fit-content; margin-bottom: 16px;
     }
 
     .typing span {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
+      width: 7px; height: 7px; border-radius: 50%;
       background: var(--accent);
       animation: bounce 1.2s infinite;
     }
@@ -353,18 +275,15 @@
 
     /* Input area */
     .input-area {
-      position: relative;
-      z-index: 10;
+      position: relative; z-index: 10;
       padding: 12px 16px;
-      background: rgba(10, 14, 26, 0.97);
+      background: rgba(10,14,26,0.97);
       border-top: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
 
     .input-row {
-      display: flex;
-      gap: 10px;
-      align-items: flex-end;
+      display: flex; gap: 10px; align-items: flex-end;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 24px;
@@ -372,92 +291,54 @@
       transition: border-color 0.2s;
     }
 
-    .input-row:focus-within {
-      border-color: var(--accent);
-    }
+    .input-row:focus-within { border-color: var(--accent); }
 
     #textInput {
-      flex: 1;
-      background: none;
-      border: none;
-      outline: none;
+      flex: 1; background: none; border: none; outline: none;
       color: var(--text);
       font-family: 'IBM Plex Sans', sans-serif;
-      font-size: 15px;
-      resize: none;
-      max-height: 120px;
-      min-height: 24px;
-      line-height: 1.5;
-      padding: 4px 0;
+      font-size: 15px; resize: none;
+      max-height: 120px; min-height: 24px;
+      line-height: 1.5; padding: 4px 0;
     }
 
     #textInput::placeholder { color: var(--text2); }
 
     .btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      transition: all 0.2s;
-      flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; transition: all 0.2s; flex-shrink: 0;
     }
 
-    .btn-mic {
-      background: var(--surface2);
-      color: var(--text2);
-    }
-
+    .btn-mic { background: var(--surface2); color: var(--text2); }
     .btn-mic:hover { background: var(--border); color: var(--text); }
-    .btn-mic.listening {
-      background: rgba(255, 79, 106, 0.2);
-      color: var(--negative);
-      animation: pulse 1s infinite;
-    }
+    .btn-mic.listening { background: rgba(255,79,106,0.2); color: var(--negative); animation: pulse 1s infinite; }
 
-    .btn-send {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #000;
-    }
-
+    .btn-send { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #000; }
     .btn-send:hover { transform: scale(1.05); }
     .btn-send:active { transform: scale(0.95); }
     .btn-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
-    .input-hint {
-      text-align: center;
-      font-size: 11px;
-      color: var(--text2);
-      margin-top: 8px;
-    }
+    .input-hint { text-align: center; font-size: 11px; color: var(--text2); margin-top: 8px; }
 
-    /* Error message */
     .error-msg {
-      background: rgba(255, 79, 106, 0.1);
-      border: 1px solid rgba(255, 79, 106, 0.3);
+      background: rgba(255,79,106,0.1);
+      border: 1px solid rgba(255,79,106,0.3);
       color: var(--negative);
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      margin-bottom: 12px;
+      padding: 10px 14px; border-radius: 12px;
+      font-size: 13px; margin-bottom: 12px;
       animation: slideUp 0.3s ease;
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
-      .message { max-width: 95%; }
-      .result-card { max-width: 100%; }
+      .message, .result-card, .cultural-card { max-width: 100%; }
       .welcome h2 { font-size: 18px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="logo">
       <div class="logo-icon">🌉</div>
@@ -472,22 +353,22 @@
     </div>
   </header>
 
-  <!-- Chat area -->
   <div class="chat-area" id="chatArea">
     <div class="welcome" id="welcome">
       <span class="welcome-icon">🌉</span>
       <h2>Welcome to BridgeAI</h2>
-      <p>Type in Arabic or English — I'll translate and analyse the sentiment automatically.</p>
+      <p>Type in Arabic or English — I'll translate, analyse sentiment, and explain cultural context automatically.</p>
       <div class="example-chips">
-        <div class="chip" onclick="useExample('Good morning, welcome to Dubai!')">Good morning, welcome to Dubai!</div>
-        <div class="chip" onclick="useExample('أنا سعيد جداً بلقائك')">أنا سعيد جداً بلقائك</div>
-        <div class="chip" onclick="useExample('The weather is beautiful today')">The weather is beautiful today</div>
-        <div class="chip" onclick="useExample('شكراً جزيلاً على مساعدتك')">شكراً جزيلاً على مساعدتك</div>
+        <div class="chip" onclick="useExample('Good morning, welcome to Dubai!')">Good morning!</div>
+        <div class="chip" onclick="useExample('Inshallah we will meet tomorrow')">Inshallah</div>
+        <div class="chip" onclick="useExample('Yalla, let us go!')">Yalla!</div>
+        <div class="chip" onclick="useExample('Habibi, how are you?')">Habibi</div>
+        <div class="chip" onclick="useExample('شكراً جزيلاً على مساعدتك')">شكراً</div>
+        <div class="chip" onclick="useExample('الحمد لله كل شيء تمام')">الحمد لله</div>
       </div>
     </div>
   </div>
 
-  <!-- Input area -->
   <div class="input-area">
     <div class="input-row">
       <textarea
@@ -500,7 +381,7 @@
       <button class="btn btn-mic" id="micBtn" onclick="toggleVoice()" title="Voice input">🎤</button>
       <button class="btn btn-send" id="sendBtn" onclick="sendMessage()" title="Send">➤</button>
     </div>
-    <div class="input-hint">Supports Arabic 🇦🇪 and English 🇬🇧 — auto-detected</div>
+    <div class="input-hint">Supports Arabic 🇦🇪 and English 🇬🇧 · Auto-detects language · Shows cultural context 🕌</div>
   </div>
 
   <script>
@@ -508,13 +389,11 @@
     let isListening = false;
     let recognition = null;
 
-    // --- Auto resize textarea ---
     function autoResize(el) {
       el.style.height = 'auto';
       el.style.height = Math.min(el.scrollHeight, 120) + 'px';
     }
 
-    // --- Handle Enter key ---
     function handleKey(e) {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
@@ -522,41 +401,32 @@
       }
     }
 
-    // --- Use example chip ---
     function useExample(text) {
       document.getElementById('textInput').value = text;
       sendMessage();
     }
 
-    // --- Scroll to bottom ---
     function scrollToBottom() {
       const chat = document.getElementById('chatArea');
       chat.scrollTop = chat.scrollHeight;
     }
 
-    // --- Hide welcome screen ---
     function hideWelcome() {
       const welcome = document.getElementById('welcome');
       if (welcome) welcome.remove();
     }
 
-    // --- Add user message bubble ---
     function addUserMessage(text) {
       hideWelcome();
       const chat = document.getElementById('chatArea');
       const isArabic = /[\u0600-\u06FF]/.test(text);
       const div = document.createElement('div');
       div.className = 'message user';
-      div.innerHTML = `
-        <div class="bubble ${isArabic ? 'arabic-text' : ''}">
-          ${escapeHTML(text)}
-        </div>
-      `;
+      div.innerHTML = `<div class="bubble ${isArabic ? 'arabic-text' : ''}">${escapeHTML(text)}</div>`;
       chat.appendChild(div);
       scrollToBottom();
     }
 
-    // --- Add typing indicator ---
     function addTyping() {
       const chat = document.getElementById('chatArea');
       const div = document.createElement('div');
@@ -565,26 +435,19 @@
       div.innerHTML = '<span></span><span></span><span></span>';
       chat.appendChild(div);
       scrollToBottom();
-      return div;
     }
 
-    // --- Remove typing indicator ---
     function removeTyping() {
       const t = document.getElementById('typing');
       if (t) t.remove();
     }
 
-    // --- Add result card ---
     function addResultCard(data) {
       const chat = document.getElementById('chatArea');
       const isArabicTranslation = data.direction === 'English → Arabic';
 
-      const sentimentColor = (s) => s === 'POSITIVE' ? 'POSITIVE' : s === 'NEGATIVE' ? 'NEGATIVE' : 'NEUTRAL';
-      const sentimentLabel = (s, e, c) => `
-        <span class="sentiment-badge ${sentimentColor(s)}">
-          ${e} ${s} ${c}%
-        </span>
-      `;
+      const sentimentBadge = (s, e, c) =>
+        `<span class="sentiment-badge ${s}">${e} ${s} ${c}%</span>`;
 
       const div = document.createElement('div');
       div.className = 'result-card';
@@ -595,22 +458,41 @@
         </div>
         <div class="result-body">
           <div class="result-label">Translation</div>
-          <div class="result-text ${isArabicTranslation ? 'arabic-text' : ''}">
-            ${escapeHTML(data.translated)}
-          </div>
+          <div class="result-text ${isArabicTranslation ? 'arabic-text' : ''}">${escapeHTML(data.translated)}</div>
           <div class="result-divider"></div>
           <div class="result-label">Sentiment Analysis</div>
           <div class="sentiment-row">
-            ${sentimentLabel(data.sentiment_original, data.sentiment_original_emoji, data.sentiment_original_confidence)}
-            ${sentimentLabel(data.sentiment_translated, data.sentiment_translated_emoji, data.sentiment_translated_confidence)}
+            ${sentimentBadge(data.sentiment_original, data.sentiment_original_emoji, data.sentiment_original_confidence)}
+            ${sentimentBadge(data.sentiment_translated, data.sentiment_translated_emoji, data.sentiment_translated_confidence)}
           </div>
         </div>
       `;
       chat.appendChild(div);
+
+      // Show cultural tip if found
+      if (data.cultural_tip) {
+        addCulturalCard(data.cultural_tip);
+      }
+
       scrollToBottom();
     }
 
-    // --- Add error message ---
+    function addCulturalCard(tip) {
+      const chat = document.getElementById('chatArea');
+      const div = document.createElement('div');
+      div.className = 'cultural-card';
+      div.innerHTML = `
+        <div class="cultural-header">
+          <span style="font-size:20px">${tip.emoji}</span>
+          <span class="cultural-badge">🕌 Cultural Context — ${tip.category}</span>
+        </div>
+        <div class="cultural-phrase">${tip.arabic}</div>
+        <div class="cultural-literal">"${tip.literal}"</div>
+        <div class="cultural-explanation">${tip.cultural}</div>
+      `;
+      chat.appendChild(div);
+    }
+
     function addError(msg) {
       const chat = document.getElementById('chatArea');
       const div = document.createElement('div');
@@ -620,32 +502,23 @@
       scrollToBottom();
     }
 
-    // --- Escape HTML ---
     function escapeHTML(str) {
       return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
 
-    // --- Send message ---
     async function sendMessage() {
       const input = document.getElementById('textInput');
       const text = input.value.trim();
       if (!text) return;
 
-      // Clear input
       input.value = '';
       input.style.height = 'auto';
-
-      // Disable send button
       document.getElementById('sendBtn').disabled = true;
 
-      // Show user message
       addUserMessage(text);
-
-      // Show typing indicator
       addTyping();
 
       try {
-        // Call FastAPI /analyze endpoint
         const response = await fetch(`${API}/analyze`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -653,12 +526,9 @@
         });
 
         if (!response.ok) throw new Error('API error');
-
         const data = await response.json();
         removeTyping();
         addResultCard(data);
-
-        // Speak the translation
         speakText(data.translated, data.direction);
 
       } catch (err) {
@@ -670,41 +540,27 @@
       input.focus();
     }
 
-    // --- Text to Speech ---
- function speakText(text, direction) {
-  if (!('speechSynthesis' in window)) return;
-  const utterance = new SpeechSynthesisUtterance(text);
-  const isArabic = direction.includes('Arabic');
-  
-  window.speechSynthesis.onvoiceschanged = () => {
-    const voices = window.speechSynthesis.getVoices();
-    const arabicVoice = voices.find(v => v.lang.includes('ar'));
-    const englishVoice = voices.find(v => v.lang.includes('en'));
-    if (isArabic && arabicVoice) utterance.voice = arabicVoice;
-    if (!isArabic && englishVoice) utterance.voice = englishVoice;
-  };
+    function speakText(text, direction) {
+      if (!('speechSynthesis' in window)) return;
+      const utterance = new SpeechSynthesisUtterance(text);
+      const isArabic = direction.includes('Arabic');
+      utterance.lang = isArabic ? 'ar-SA' : 'en-US';
+      utterance.rate = 0.9;
+      window.speechSynthesis.speak(utterance);
+    }
 
-  utterance.lang = isArabic ? 'ar-SA' : 'en-US';
-  utterance.rate = 0.85;
-  window.speechSynthesis.speak(utterance);
-}
-    // --- Voice Input ---
     function toggleVoice() {
       if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-        addError('Voice input not supported in this browser. Please use Chrome.');
+        addError('Voice input not supported. Please use Chrome and open via Live Server (http://)');
         return;
       }
-
-      if (isListening) {
-        recognition.stop();
-        return;
-      }
+      if (isListening) { recognition.stop(); return; }
 
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       recognition = new SpeechRecognition();
       recognition.continuous = false;
       recognition.interimResults = false;
-      recognition.lang = 'ar-SA';  // default Arabic, auto-switches
+      recognition.lang = 'ar-SA';
 
       recognition.onstart = () => {
         isListening = true;
@@ -724,16 +580,9 @@
         document.getElementById('micBtn').textContent = '🎤';
       };
 
-      recognition.onerror = () => {
-        isListening = false;
-        document.getElementById('micBtn').classList.remove('listening');
-        document.getElementById('micBtn').textContent = '🎤';
-      };
-
       recognition.start();
     }
 
-    // --- Check API status on load ---
     async function checkStatus() {
       try {
         const res = await fetch(`${API}/`);
@@ -752,5 +601,3 @@
   </script>
 </body>
 </html>
-
-
